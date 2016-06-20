@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.account_activation(@user).deliver_now
+      #UserMailer.account_activation(@user).deliver_now
       message = "Please check your email to activate your account! \n "
       message += edit_account_activation_url(@user.activation_token,
                                                     email: @user.email)                                                                 
